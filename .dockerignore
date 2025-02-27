@@ -1,0 +1,51 @@
+# Python bytecode and compiled files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Docker related files (if any)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Git related files
+.git/
+.gitignore
+
+# Tests and coverage
+tests/
+*.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# Static files and media (if applicable, adjust paths)
+static/
+media/
+
+# Database files (if applicable, adjust paths)
+*.sqlite
+*.db
+
+# IDE and OS specific files
+.idea/
+.vscode/
+*.swp
+*.bak
+*.DS_Store
+
+# Poetry or other package manager lock files
+poetry.lock
+Pipfile.lock
+
+# Mypy cache
+.mypy_cache/
+
+# Ruff cache
+.ruff_cache/

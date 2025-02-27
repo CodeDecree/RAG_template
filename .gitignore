@@ -1,0 +1,88 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+dist/
+build/
+eggs/
+.egg-info/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.env
+.venv
+pip-wheel-metadata/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments (conda)
+conda-env/
+environment.yml
+*.pth
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+__pycache__/
+media/
+static/
+.sqlite3
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.sqlite
+
+# Sphinx documentation
+docs/_build/
+
+# Temp files
+*.swp
+*.bak
+*.tmp
+*.DS_Store # macOS
+.vscode/ # VS Code
+.idea/ # Pycharm
+*.orig
+
+# Poetry
+poetry.lock
+
+# mypy cache
+.mypy_cache/
+
+# Coverage data
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Ruff cache
+.ruff_cache/
+
+.env

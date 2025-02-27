@@ -1,0 +1,5 @@
+fastapi[standard]
+llama-index
+llama-index-embeddings-azure-openai
+llama-index-llms-azure-openai
+dotenv
