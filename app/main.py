@@ -9,7 +9,6 @@ UPLOAD_DIR = "./data"
 
 app = FastAPI()
 uploader = DocUploader(upload_dir="data")
-assistant = Assistant(data_dir='./data/')
 templates = Jinja2Templates(directory="templates")
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
@@ -19,6 +18,8 @@ async def read_root(request: Request):
 
 @app.get("/assistant")
 def read_root(message: str = None):
+    # This will use the assistant instance from the last successful upload
+    global assistant
     if message:
         return {"response": assistant.getResponse(message)}
     return {"response": "No message provided"}
@@ -26,14 +27,16 @@ def read_root(message: str = None):
 @app.post("/upload")
 async def doc_upload(file: UploadFile = File(...)):
     """
-    Uploads a document and saves it to the server.
+    Uploads a document and re-initializes the assistant.
 
     :param file: Uploaded file from request
     :return: JSON response with file path or error message
     """
+    global assistant  # Declare that you're using the global variable
     try:
-        file_path = uploader.save_file(await file.read(), file.filename)  
-        return {"message": "File uploaded successfully"}
+        file_path = uploader.save_file(await file.read(), file.filename)
+        assistant = Assistant(data_dir='./data/')  # Re-initialize assistant
+        return {"message": "File uploaded and assistant re-initialized successfully"}
     except Exception as e:
         return {"error": str(e)}
 
